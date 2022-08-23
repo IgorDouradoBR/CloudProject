@@ -12,7 +12,6 @@ nomes = {"", " "}
 def create_name():
     carrega = request.data
     atributos = json.loads(carrega)
-    # bad request
 
     key = (int(atributos["prateleira"]),int(atributos["setor"]))
 
@@ -33,45 +32,35 @@ def create_name():
     return jsonify(atributos), 201
 
 
-############################## read name ###############################
 '''
 @app.route('/keys/<nome>')
 def read_name(nome):
     value = sistema.read(nome)
-    # not found
     if (value is None):
         return jsonify({"nome": nome, "errorMsg": "not found"}), 404
-    # succeed
     value["nome"] = nome
     return jsonify(value), 200
 '''
 
 
-############################## update name #############################
 @app.route('/keys/<nome>', methods = ["PUT"])
 def update_name(nome):
     value = json.loads(request.data)
-    # bad request
     if (not sistema.update(nome, value)):
         return jsonify({"nome": nome, "errorMsg": "bad request"}), 400
-    # succeed
     value["nome"] = nome
     return jsonify(value), 200
 
 @app.route('/keys/<nome>', methods = ["DELETE"])
 def delete_name(nome):
-    # not found
     value = sistema.read(nome)
     if not value:
         return jsonify({"nome": nome, "errorMsg": "not found"}), 404
-    # not found
     if (not sistema.delete(nome)):
         return jsonify({"nome": nome, "errorMsg": "not found"}), 404
-    # succeed
     value["nome"] = nome
     return jsonify(value), 200
 
-#prestando k k k K
 '''
 @app.route('/keys/<setor>')
 def busca_setor(setor):
@@ -101,7 +90,5 @@ def busca_prat_setor(setor):
 
 
 
-############################ Main Function #############################
 if __name__ == "__main__":
-    # run backend server on http://localhost:5000/
     app.run(host = 'localhost',port=5000, debug=True)
