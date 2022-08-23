@@ -9,4 +9,4 @@ Busca as pratileiras por sesor
 
 os outros 3 devem estar comentados, apenas o que se deseja deve estar fora de comentários
 
-*Use valores inteiros para os parametros (tirando o campo de Nome)
+*Use valores INTEIROS para os parametros (tirando o campo de Nome)
