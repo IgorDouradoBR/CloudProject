@@ -77,7 +77,7 @@ class App extends React.Component {
       });    
     }
 
-    else if (buttonId === "read") {
+    else if (buttonId === "consulta") {
       fetch("http://localhost:5000/keys/" + state["nome"], {
       })
       .then(requisicao => {
@@ -118,7 +118,7 @@ class App extends React.Component {
         this.setState(state);
       });    
     }
-    else if (buttonId === "update") {
+    else if (buttonId === "atualiza") {
       fetch("http://localhost:5000/keys/" +  state["nome"], { 
         method: 'PUT',
         body: JSON.stringify({
@@ -151,14 +151,12 @@ class App extends React.Component {
           this.setState(state);
       })
       .catch(naofoi => {
-        // console.log(naofoi);
         state["saida"] = naofoi;
         this.setState(state);
       });    
     }
 
-    // ######################### delete name ###########################
-    else if (buttonId === "delete") {
+    else if (buttonId === "exclui") {
       fetch("http://localhost:5000/keys/" + state["nome"], { 
         method: 'DELETE'
       })
@@ -324,9 +322,9 @@ class App extends React.Component {
             <Input value={state["quantidade"]} onChange={this.handleChange} id="quantidade"/>
           </InputGroup> <br />
           <Button color="secondary" onClick={this.handleClick} id="adiciona">Adiciona</Button>{" "}
-          <Button color="secondary" onClick={this.handleClick} id="read">Read</Button>{" "}
-          <Button color="secondary" onClick={this.handleClick} id="update">Update</Button>{" "}
-          <Button color="secondary" onClick={this.handleClick} id="delete">Delete</Button>{" "}
+          <Button color="secondary" onClick={this.handleClick} id="consulta">Consulta</Button>{" "}
+          <Button color="secondary" onClick={this.handleClick} id="atualiza">Atualiza</Button>{" "}
+          <Button color="secondary" onClick={this.handleClick} id="exclui">Exclui</Button>{" "}
           <Button color="secondary" onClick={this.handleClick} id="buscaSetor">Busca por setor</Button>{" "}
           <Button color="secondary" onClick={this.handleClick} id="buscaPrateleira">Busca por prateleira</Button>{" "}
           <Button color="secondary" onClick={this.handleClick} id="buscaPratSetor">Busca as prateleiras por setor</Button>{" "}
