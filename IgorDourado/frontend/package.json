@@ -1,0 +1,50 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "Dell Estágio por Igor Dourado",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "gh-pages": "^2.2.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "3.0.1",
+    "reactstrap": "^8.9.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "chownr": {
+    "version": "1.1.2",
+    "resolved": "https://registry.npmjs.org/chownr/-/chownr-1.1.2.tgz",
+    "integrity": "sha512-GkfeAQh+QNy3wquu9oIZr6SS5x7wGdSgNQvD10X3r+AZr1Oys22HW8kAmDMvNg2+Dm0TeGaEuO8gFwdBXxwO8A=="
+  },
+  "chrome-trace-event": {
+    "version": "1.0.2",
+    "resolved": "https://registry.npmjs.org/chrome-trace-event/-/chrome-trace-event-1.0.2.tgz",
+    "integrity": "sha512-9e/zx1jw7B4CO+c/RXoCsfg/x1AfUBioy4owYH0bJprEYAx5hRFLRhWBqHAG57D0ZM4H7vxbP7bPe0VwhQRYDQ==",
+    "requires": {
+      "tslib": "^1.9.0"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
