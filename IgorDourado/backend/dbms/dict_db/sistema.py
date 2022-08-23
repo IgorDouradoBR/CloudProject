@@ -84,14 +84,11 @@ class Sistema():
             if (len(value["setor"]) == 0
                     and len(value["prateleira"]) == 0):
                 return False
-            # not found
             if (nome not in self.dicionario):
                 return False
-        # invalid value
         except KeyError:
             print("nome error")
             return False
-        # succeed
         key = (int(self.dicionario[nome].get("prateleira")), int(self.dicionario[nome].get("setor")))
         self.pesos[key] =  int(self.pesos[key]) - int(self.dicionario[nome].get("peso"))
         self.volumes[key] =  int(self.volumes[key]) - int(self.dicionario[nome].get("volume"))       
